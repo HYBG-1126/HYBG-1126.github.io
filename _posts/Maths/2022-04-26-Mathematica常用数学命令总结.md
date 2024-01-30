@@ -1,5 +1,0 @@
----
-categories: [Maths]
-tags: Maths
----
-
