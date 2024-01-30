@@ -20,7 +20,7 @@ text_skin: dark # "default" (default), "dark", "forest", "ocean", "chocolate", "
 highlight_theme: tomorrow-night # "default" (default), "tomorrow", "tomorrow-night", "tomorrow-night-eighties", "tomorrow-night-blue", "tomorrow-night-bright"
 url: # the base hostname & protocol for your site e.g. https://www.someone.com
 baseurl: # does not include hostname
-title: Zorch 的博客
+title: HYBG-1126 的博客
 description: > # this means to ignore newlines until "Language & timezone"
   A man who wants to change the world.
 
@@ -33,7 +33,7 @@ timezone: # see https://en.wikipedia.org/wiki/List_of_tz_database_time_zones for
 ##############################
 author:
   type: # "person" (default), "organization"
-  name: zorchp
+  name: HYBG-1126
   url:
   avatar: # path or url of avatar image (square)
   bio: I am an amazing person.
@@ -52,7 +52,7 @@ author:
 
 ## => GitHub Repository (if the site is hosted by GitHub)
 ##############################
-repository: zorchp/zorchp.github.io
+repository: HYBG-1126/HYBG-1126.github.io
 repository_tree: main
 
 ## => Paths
@@ -206,7 +206,7 @@ defaults:
       type: posts
     values:
       layout: article
-      author: zorch
+      author: HYBG-1126
       sharing: true
       license: true
       aside:
