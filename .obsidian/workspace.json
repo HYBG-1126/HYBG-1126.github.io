@@ -1,0 +1,157 @@
+{
+  "main": {
+    "id": "9dd9dda2ecf17b97",
+    "type": "split",
+    "children": [
+      {
+        "id": "d91f373d4b41e7cb",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2b4ea572e2ea8872",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "_posts/2-Life/3-美化/1-电脑壁纸/2024-02-01-电脑壁纸.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "2a56f9bd154d499a",
+    "type": "split",
+    "children": [
+      {
+        "id": "f5fbc3435d46f084",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6c34158a33f551cd",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "beb5a7b57394be99",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "5b5799da64b247c4",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "48d13206b9614f1a",
+    "type": "split",
+    "children": [
+      {
+        "id": "6916a939f42a0eac",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "08a65a815f8b8d59",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "_posts/2-Life/3-美化/1-电脑壁纸/2024-02-01-电脑壁纸.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "dc6ee4f9acb07803",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "_posts/2-Life/3-美化/1-电脑壁纸/2024-02-01-电脑壁纸.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "affcb5f8f8c1cd3c",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "e087aa0d06d1a2e1",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "_posts/2-Life/3-美化/1-电脑壁纸/2024-02-01-电脑壁纸.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false
+    }
+  },
+  "active": "2b4ea572e2ea8872",
+  "lastOpenFiles": [
+    "_posts/1-Learn/2-Technology/2-计算机/1-网络/计算机网络-第7版-谢希仁.pdf",
+    "_posts/2-Life/3-美化/1-电脑壁纸/2024-02-01-电脑壁纸.md",
+    "_posts/1-Learn/2-Technology/1-GitHub/2024-01-31-Github项目记录.md",
+    "_posts/1-Learn/1-Subject/1-English/2024-01-30-怎么学英语.md",
+    "_posts/2024-01-30-template.md"
+  ]
+}
