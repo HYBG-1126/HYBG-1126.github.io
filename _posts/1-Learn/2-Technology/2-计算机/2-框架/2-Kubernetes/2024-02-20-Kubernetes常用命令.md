@@ -7,7 +7,7 @@ tags: Kubernetes
 # kubernetes常用命令
 
 ## 创建资源类型
-### 创建quota
+### 创建一般quota
 #### 编写quota.yaml
 ```shell
 apiVersion: v1
