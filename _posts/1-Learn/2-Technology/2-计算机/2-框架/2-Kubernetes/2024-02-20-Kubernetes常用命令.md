@@ -51,6 +51,7 @@ value: 100000
 globalDefault: false
 description: "Medium priority class for bigdata-pro namespace pods"
 ```
+
 </details>
 
 <details>
@@ -59,11 +60,12 @@ description: "Medium priority class for bigdata-pro namespace pods"
 ```shell
 kubectl apply -f PriorityClass.yaml
 ```
+
 </details>
 
 
 <details>
-<summary>编写各个优先级的资源大小resourequota.yaml</summary>
+    <summary>编写各个优先级的资源大小resourequota.yaml</summary>
 
 ```shell
 apiVersion: v1
@@ -113,6 +115,7 @@ items:
         limits.cpu: "120"
         limits.memory: 250Gi
 ```
+
 </details>
 
 <details>
@@ -121,6 +124,7 @@ items:
 ```shell
 kubectl apply -f resourequota.yaml
 ```
+
 </details>
 
 
