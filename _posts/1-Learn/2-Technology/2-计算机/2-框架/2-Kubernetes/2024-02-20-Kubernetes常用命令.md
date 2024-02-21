@@ -26,8 +26,12 @@ spec:
 kubectl apply -f quota.yaml -n namespace
 ```
 
+
+
 ### 创建不同优先级的quota资源，[Pod 优先级和抢占](https://kubernetes.io/zh-cn/docs/concepts/scheduling-eviction/pod-priority-preemption/)
-#### 编写PriorityClass.yaml
+<details>
+  <summary>编写PriorityClass.yaml</summary>
+
 ```shell
 apiVersion: scheduling.k8s.io/v1
 kind: PriorityClass
@@ -47,11 +51,20 @@ value: 100000
 globalDefault: false
 description: "Medium priority class for bigdata-pro namespace pods"
 ```
-#### 执行命令创建PriorityClass
+</details>
+
+<details>
+<summary>执行命令创建PriorityClass</summary>
+
 ```shell
 kubectl apply -f PriorityClass.yaml
 ```
-#### 编写各个优先级的资源大小resourequota.yaml
+</details>
+
+
+<details>
+<summary>编写各个优先级的资源大小resourequota.yaml</summary>
+
 ```shell
 apiVersion: v1
 kind: List
@@ -100,10 +113,17 @@ items:
         limits.cpu: "120"
         limits.memory: 250Gi
 ```
-#### 执行命令创建resourequota
+</details>
+
+<details>
+<summary>执行命令创建resourequota</summary>
+
 ```shell
 kubectl apply -f resourequota.yaml
 ```
+</details>
+
+
 
 ## 查看资源使用情况
 ### 查看节点资源使用情况
