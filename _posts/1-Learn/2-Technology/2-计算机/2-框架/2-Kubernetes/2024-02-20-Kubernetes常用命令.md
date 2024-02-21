@@ -67,7 +67,7 @@ kubectl apply -f PriorityClass.yaml
 <details>
     <summary>编写各个优先级的资源大小resourequota.yaml</summary>
 
-```yaml
+``` yaml
 apiVersion: v1
 kind: List
 items:
@@ -117,14 +117,12 @@ items:
 ```
 
 </details>
-
 <details>
-<summary>执行命令创建resourequota</summary>
+ <summary>执行命令创建resourequota</summary>
 
 ```shell
 kubectl apply -f resourequota.yaml
 ```
-
 </details>
 
 
