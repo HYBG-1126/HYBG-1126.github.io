@@ -9,7 +9,7 @@ tags: Kubernetes
 ## 创建资源类型
 ### 创建一般quota
 #### 编写quota.yaml
-```shell
+```yaml
 apiVersion: v1
 kind: ResourceQuota
 metadata:
@@ -32,7 +32,7 @@ kubectl apply -f quota.yaml -n namespace
 <details>
   <summary>编写PriorityClass.yaml</summary>
 
-```shell
+```yaml
 apiVersion: scheduling.k8s.io/v1
 kind: PriorityClass
 metadata:
@@ -67,7 +67,7 @@ kubectl apply -f PriorityClass.yaml
 <details>
     <summary>编写各个优先级的资源大小resourequota.yaml</summary>
 
-```shell
+```yaml
 apiVersion: v1
 kind: List
 items:
