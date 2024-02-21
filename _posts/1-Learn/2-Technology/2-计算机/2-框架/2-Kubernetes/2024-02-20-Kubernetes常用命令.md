@@ -21,9 +21,88 @@ spec:
     limits.cpu: "200"
     limits.memory: 600Gi
 ```
-#### 创建quota
+#### 执行命令创建quota
 ```shell
 kubectl apply -f quota.yaml -n namespace
+```
+
+### 创建不同优先级的quota资源，[Pod 优先级和抢占](https://kubernetes.io/zh-cn/docs/concepts/scheduling-eviction/pod-priority-preemption/)
+#### 编写PriorityClass.yaml
+```shell
+apiVersion: scheduling.k8s.io/v1
+kind: PriorityClass
+metadata:
+  name: high
+  namespace: bigdata
+value: 1000000
+globalDefault: false
+description: "High priority class for bigdata-pro namespace pods"
+---
+apiVersion: scheduling.k8s.io/v1
+kind: PriorityClass
+metadata:
+  name: medium
+  namespace: bigdata
+value: 100000
+globalDefault: false
+description: "Medium priority class for bigdata-pro namespace pods"
+```
+#### 执行命令创建PriorityClass
+```shell
+kubectl apply -f PriorityClass.yaml
+```
+#### 编写各个优先级的资源大小resourequota.yaml
+```shell
+apiVersion: v1
+kind: List
+items:
+  - apiVersion: v1
+    kind: ResourceQuota
+    metadata:
+      name: bigdata-high
+      namespace: bigdata
+    spec:
+      hard:
+        limits.cpu: "20"
+        limits.memory: 50Gi
+        requests.cpu: "20"
+        requests.memory: 50Gi
+      scopeSelector:
+        matchExpressions:
+          - operator: In
+            scopeName: PriorityClass
+            values: ["high"]
+  - apiVersion: v1
+    kind: ResourceQuota
+    metadata:
+      name: bigdata-medium
+      namespace: bigdata
+    spec:
+      hard:
+        limits.cpu: "100"
+        limits.memory: 200Gi
+        requests.cpu: "100"
+        requests.memory: 200Gi
+      scopeSelector:
+        matchExpressions:
+          - operator: In
+            scopeName: PriorityClass
+            values: ["medium"]
+  - apiVersion: v1
+    kind: ResourceQuota
+    metadata:
+      name: namespace-quota
+      namespace: bigdata
+    spec:
+      hard:
+        requests.cpu: "120"
+        requests.memory: 250Gi
+        limits.cpu: "120"
+        limits.memory: 250Gi
+```
+#### 执行命令创建resourequota
+```shell
+kubectl apply -f resourequota.yaml
 ```
 
 ## 查看资源使用情况
