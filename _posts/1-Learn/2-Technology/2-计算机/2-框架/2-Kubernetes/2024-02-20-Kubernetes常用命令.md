@@ -7,7 +7,11 @@ tags: Kubernetes
 # kubernetes常用命令
 
 ## 创建资源类型
-### 创建一般quota
+
+<details>
+
+<summary>创建一般quota</summary>
+
 #### 编写quota.yaml
 ```yaml
 apiVersion: v1
@@ -21,10 +25,14 @@ spec:
     limits.cpu: "200"
     limits.memory: 600Gi
 ```
-#### 执行命令创建quota
+
+#### 执行命令创建quota\
 ```shell
 kubectl apply -f quota.yaml -n namespace
 ```
+
+</details>
+
 
 
 
@@ -32,7 +40,7 @@ kubectl apply -f quota.yaml -n namespace
 <details>
   <summary>编写PriorityClass.yaml</summary>
 
-```yaml
+``` yaml
 apiVersion: scheduling.k8s.io/v1
 kind: PriorityClass
 metadata:
@@ -115,7 +123,6 @@ items:
         limits.cpu: "120"
         limits.memory: 250Gi
 ```
-
 </details>
 <details>
  <summary>执行命令创建resourequota</summary>
