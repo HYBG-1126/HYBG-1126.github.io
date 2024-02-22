@@ -126,6 +126,8 @@ kubectl apply -f resourequota.yaml
 
 
 ## 查看资源使用情况
+
+
 <details>
 <summary><font face="黑体" color=green size=5>查看节点资源使用情况</font></summary>
 
