@@ -12,7 +12,7 @@ tags: Kubernetes
 <summary><font face="黑体" color=green size=5>创建一般quota</font></summary>
 
 ### 编写quota.yaml
-```yaml
+~~~yaml
 apiVersion: v1
 kind: ResourceQuota
 metadata:
@@ -23,12 +23,12 @@ spec:
     requests.memory: 600Gi
     limits.cpu: "200"
     limits.memory: 600Gi
-```
+~~~
 
 ### 执行命令创建quota
-```shell
+~~~shell
 kubectl apply -f quota.yaml -n namespace
-```
+~~~
 
 </details>
 
@@ -40,7 +40,7 @@ kubectl apply -f quota.yaml -n namespace
 ### [Pod 优先级和抢占](https://kubernetes.io/zh-cn/docs/concepts/scheduling-eviction/pod-priority-preemption/)
 ### 编写PriorityClass.yaml
 
-``` yaml
+~~~yaml
 apiVersion: scheduling.k8s.io/v1
 kind: PriorityClass
 metadata:
@@ -58,17 +58,17 @@ metadata:
 value: 100000
 globalDefault: false
 description: "Medium priority class for bigdata-pro namespace pods"
-```
+~~~
 
 ### 执行命令创建
 
-```shell
+~~~shell
 kubectl apply -f PriorityClass.yaml
-```
+~~~
 
 ### 编写各个优先级的资源大小resourequota.yaml
 
-``` yaml
+~~~yaml
 apiVersion: v1
 kind: List
 items:
@@ -115,12 +115,12 @@ items:
         requests.memory: 250Gi
         limits.cpu: "120"
         limits.memory: 250Gi
-```
+~~~
 ### 执行命令创建
 
-```shell
+~~~shell
 kubectl apply -f resourequota.yaml
-```
+~~~
 </details>
 
 
@@ -129,25 +129,25 @@ kubectl apply -f resourequota.yaml
 <details>
 <summary><font face="黑体" color=green size=5>查看节点资源使用情况</font></summary>
 
-```shell
+~~~shell
 # 查看使用情况
 kubectl top node
 
 # 查看使用情况并排序
 kubectl top node --sort-by='memory'/'cpu'
-```
+~~~
 </details>
 
 <details>
 <summary><font face="黑体" color=green size=5>查看pod资源使用情况</font></summary>
 
-```shell
+~~~shell
 # 查看使用情况
 kubectl top pod
 
 # 查看使用情况并排序
 kubectl top pod --sort-by='memory'/'cpu'
-```
+~~~
 </details>
 
 
