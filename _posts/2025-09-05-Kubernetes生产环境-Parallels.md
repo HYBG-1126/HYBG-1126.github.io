@@ -30,14 +30,14 @@ REDHAT_SUPPORT_PRODUCT="Rocky Linux"
 REDHAT_SUPPORT_PRODUCT_VERSION="9.6"
 ```
 ### 节点环境
-|       ip        |   角色   |       hostname       |  配置  |
-|:---------------:|:------:|:--------------------:|:----:|
-| 192.168.10.120  | vip地址  |          -           |  -   |
-| 192.168.10.121  | master | rocky-k8s-master-121 | 4c8g |
-| 192.168.10.122  | master | rocky-k8s-master-121 | 4c8g |
-| 192.168.10.123  | master | rocky-k8s-master-121 | 4c8g |
-| 192.168.10.124  |  node  |  rocky-k8s-node-121  | 4c8g |
-| 192.168.10.125  |  node  |  rocky-k8s-node-121  | 4c8g |
+|       ip       |    角色    |       hostname       |  配置  |
+|:--------------:|:--------:|:--------------------:|:----:|
+| 192.168.10.120 |  vip地址   |                      |      |
+| 192.168.10.121 |  master  | rocky-k8s-master-121 | 4c8g |
+| 192.168.10.122 |  master  | rocky-k8s-master-121 | 4c8g |
+| 192.168.10.123 |  master  | rocky-k8s-master-121 | 4c8g |
+| 192.168.10.124 |   node   |  rocky-k8s-node-121  | 4c8g |
+| 192.168.10.125 |   node   |  rocky-k8s-node-121  | 4c8g |
 
 ## 环境初始化
 ### 配置hosts
@@ -466,7 +466,7 @@ crictl info|  grep SystemdCgroup
 - 在以前我们在私有环境下创建 Kubernetes 集群时，我们需要准备一个硬件/软件的负载均衡器来创建多控制面集群，更多的情况下我们会选择使用 HAProxy + Keepalived 来实现这个功能。一般情况下我们创建2个负载均衡器的虚拟机，然后分配一个 VIP，然后使用 VIP 为负载均衡器提供服务，通过 VIP 将流量重定向到后端的某个 Kubernetes 控制器平面节点上。
 </br>不使用vip
 <img src="https://picdn.youdianzhishi.com/images/20210616142006.png">
-使用vip
+</br>使用vip
 <img src="https://picdn.youdianzhishi.com/images/20210616142207.png">
 - kube-vip 可以通过静态 pod 运行在控制平面节点上，这些 pod 通过 ARP 会话来识别每个节点上的其他主机，我们可以选择 BGP 或 ARP 来设置负载平衡器，这与 Metal LB 比较类似。在 ARP 模式下，会选出一个领导者，这个节点将继承虚拟 IP 并成为集群内负载均衡的 Leader，而在 BGP 模式下，所有节点都会通知 VIP 地址。
 - 集群中的 Leader 将分配 vip，并将其绑定到配置中声明的选定接口上。当 Leader 改变时，它将首先撤销 vip，或者在失败的情况下，vip 将直接由下一个当选的 Leader 分配。当 vip 从一个主机移动到另一个主机时，任何使用 vip 的主机将保留以前的 vip <-> MAC 地址映射，直到 ARP 过期（通常是30秒）并检索到一个新的 vip <-> MAC 映射，这可以通过使用无偿的 ARP 广播来优化。
